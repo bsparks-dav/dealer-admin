@@ -1,0 +1,77 @@
+models:
+  InvoiceItem:
+    inv_itm_inv_no: string
+    inv_itm_seq_no: integer
+    inv_itm_inv_date: date
+    inv_itm_cust_no: string
+    inv_itm_itm_no_alt: string
+    inv_itm_inv_date_alt: date
+    inv_itm_desc_1: text
+    inv_itm_desc_2: text
+    inv_itm_ser_lot_no: string
+    inv_itm_ser_eff_date: date
+    inv_itm_unit_price: decimal
+    inv_itm_discount_pct: decimal
+    inv_itm_request_date: date
+    inv_itm_uom: string
+    inv_itm_unit_cost: decimal
+    inv_itm_unit_weight: decimal
+    inv_itm_comm_p_o_amt: decimal
+    inv_itm_promise_date: date
+    inv_itm_select_code: string
+    inv_itm_explode_kit: string
+    inv_itm_bm_order_no: string
+    inv_itm_no_package: string
+    inv_itm_po_xrf_seqno: integer
+    inv_itm_prod_cate: string
+    inv_itm_reason_code: string
+    inv_itm_prc_lvl_no: string
+    inv_itm_vendor_no: string
+    inv_itm_edi_turnarnd: string
+    inv_itm_cancel_cls: string
+    inv_itm_bm_ord_tp: string
+    inv_itm_custom_bom: string
+    inv_itm_case_size: string
+    inv_itm_inner_size: string
+    relationships:
+      belongsTo: InvoiceHeader
+
+  InvoiceItemOrg:
+    inv_itm_inv_no: string
+    inv_itm_seq_no: integer
+    inv_itm_price_org: decimal
+    inv_itm_org_bk_ord_no: string
+    inv_itm_org_bk_seqno: integer
+    inv_itm_org_itm_no: string
+    relationships:
+      belongsTo: InvoiceItemMapper
+
+  InvoiceItemQty:
+    inv_itm_inv_no: string
+    inv_itm_seq_no: integer
+    inv_itm_qty_order: integer
+    inv_itm_qty_to_ship: integer
+    inv_itm_qty_back_ord: integer
+    inv_itm_qty_rt_to_st: integer
+    inv_itm_tot_qty_ord: integer
+    inv_itm_tot_qty_shp: integer
+    relationships:
+      belongsTo: InvoiceItemMapper
+
+  InvoiceItemFlag:
+    inv_itm_inv_no: string
+    inv_itm_seq_no: integer
+    inv_itm_tax_flag_1: string
+    inv_itm_tax_flag_2: string
+    inv_itm_tax_flag_3: string
+    inv_itm_back_flag: string
+    inv_itm_comm_calc_flag: string
+    inv_itm_taxable_flag: string
+    inv_itm_stocked_flag: string
+    inv_itm_control_flag: string
+    inv_itm_mult_ftr_flg: string
+    inv_itm_price_flag: string
+    inv_itm_sty_tmp_flag: string
+    inv_itm_cpy_to_bm_fg: string
+    relationships:
+      belongsTo: InvoiceItemMapper

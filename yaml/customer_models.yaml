@@ -1,0 +1,150 @@
+
+models:
+  Customer:
+    cus_no: string
+    cus_name: string
+    cus_corr_name: string
+    cus_street1: string
+    cus_street2: string
+    cus_city: string
+    cus_st: string
+    cus_zip: string
+    cus_country: string
+    cus_geo_code: string
+    cus_outside_city_lm: string
+    cus_contact: string
+    cus_phone_no: string
+    cus_fax_number: string
+    cus_start_dt: date
+    cus_slm_no: string
+    cus_tp: string
+    cus_bal_meth: string
+    cus_stm_freq: string
+    cus_exempt_no: string
+    cus_search_name: string
+    relationships:
+      HasMany: InvoiceHeader
+
+  CustomerFfl:
+    cus_no: string
+    cus_ffl_no: string
+    cus_ffl_exp_date: date
+    cus_ffl_filler: string
+    relationships:
+      belongsTo: Customer
+
+  CustomerNote:
+    cus_no: string
+    cus_comment1: text
+    cus_note_1: text
+    cus_note_2: text
+    cus_note_3: text
+    cus_note_4: text
+    cus_note_5: text
+    relationships:
+      belongsTo: Customer
+
+  CustomerCredit:
+    cus_no: string
+    cus_cr_limit: decimal
+    cus_cr_rating: string
+    cus_cr_hold_fg: string
+    relationships:
+      belongsTo: Customer
+
+  CustomerPayment:
+    cus_no: string
+    cus_last_pay_dt: date
+    cus_last_pay_amt: decimal
+    cus_avg_pay_ytd: decimal
+    cus_avg_pay_last_yr: decimal
+    relationships:
+      belongsTo: Customer
+
+  CustomerTaxCode:
+    cus_no: string
+    cus_txbl_fg: string
+    cus_tx_cd1: string
+    cus_tx_cd2: string
+    cus_tx_cd3: string
+    relationships:
+      belongsTo: Customer
+
+  CustomerSale:
+    cus_no: string
+    cus_sales_ptd: decimal
+    cus_sales_ytd: decimal
+    cus_sales_last_yr: decimal
+    cus_sales_yr_bf_ly: decimal
+    relationships:
+      belongsTo: Customer
+
+  CustomerAmtAge:
+    cus_no: string
+    cus_amt_age_pd1: decimal
+    cus_amt_age_pd2: decimal
+    cus_amt_age_pd3: decimal
+    cus_amt_age_pd4: decimal
+    relationships:
+      belongsTo: Customer
+
+  CustomerStat:
+    cus_no: string
+    cus_cost_ptd: decimal
+    cus_cost_ytd: decimal
+    cus_cost_last_yr: decimal
+    cus_dsc_pct: decimal
+    cus_ytd_dsc_given: decimal
+    cus_balance: decimal
+    cus_high_balance: decimal
+    cus_last_sale_dt: date
+    cus_last_sale_amt: decimal
+    cus_inv_ytd: decimal
+    cus_inv_last_yr: decimal
+    cus_paid_inv_ytd: decimal
+    cus_last_stm_age_dt: date
+    relationships:
+      belongsTo: Customer
+
+  CustomerFlag:
+    cus_no: string
+    cus_allow_sub_itms: string
+    cus_allow_bo: string
+    cus_allow_part_ship: string
+    cus_print_dunn_fg: string
+    cus_fin_chg_fg: string
+    cus_use_bill_to_adrr: string
+    cus_restrict_item: string
+    cus_immed_ord_ack: string
+    cus_transfer_flag: string
+    relationships:
+      belongsTo: Customer
+
+  # catch-all table for rest of columns...
+  CustomerAccount:
+    cus_no: string
+    cus_collector: string
+    cus_order_loc: string
+    cus_terr: string
+    cus_ar_acct_no: string
+    cus_ship_via_cd: string
+    cus_ups_zone: string
+    cus_terms_cd: string
+    cus_user_date: date
+    cus_user_amt: decimal
+    cus_exempt_exp_date: date
+    cus_exempt_reason_cd: string
+    cus_bill_to_no: string
+    cus_form_no: string
+    cus_slm_start_dt: date
+    cus_abc_class: string
+    cus_frt_pay_code: string
+    cus_del_lead_time: string
+    cus_pick_inv_amt: date
+    cus_del_day_erly_alw: string
+    cus_access_date: date
+    cus_access_time: datetime
+    cus_transfer_to_loc: string
+    cus_transit_days: integer
+    relationships:
+      belongsTo: Customer
